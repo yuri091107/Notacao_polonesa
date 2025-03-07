@@ -24,8 +24,23 @@ public class Logica {
                 resposta+=valor;
             }
             
+            
+         /* Use a lógica do parêntese somente se for necessário, mas para isso deverá trocar o Queue */   
+            
+        //  else if(valor == '(') {
+        //         pilha.add('(');
+        //     }
+        //     else if(valor == ')') {
+        //         while(!pilha.isEmpty() && pilha.peek() != '(') {
+        //             resposta+=pilha.poll();
+        //         }
+        //         if(!pilha.isEmpty()) {
+        //             resposta+=pilha.poll();
+        //         }
+        //     }
+            
             else {
-                while(!pilha.isEmpty() && Prioridade(pilha.peek()) >= Prioridade(valor)) {
+                while(!pilha.isEmpty() && Prioridade(valor) == 1) {
                     resposta+=pilha.poll();
                 }
                 pilha.add(valor);
@@ -34,6 +49,7 @@ public class Logica {
         while(!pilha.isEmpty()) {
             resposta+=pilha.poll();
         }
+        
         return resposta;   
     } 
 }
