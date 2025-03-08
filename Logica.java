@@ -46,7 +46,8 @@ public class Logica {
                 // while(!pilha.isEmpty() && Prioridade(pilha.peek()) == 0) {
                 //     resposta+=pilha.poll();
                 // }
-                pilha.add(valor); //sobe o valor na pilha, mas agora somente com os operadores de prioridade menor que 1. Lembrando que se for uma expressão de +/-, a lógica acima será ignorada.
+                pilha.add(valor); //sobe o valor na pilha, mas agora somente com os operadores de prioridade menor que 1. Lembrando que se for uma expressão de +/-, a lógica acima será ignorada e vai retornar somente os operadores de prioridade 0. Caso tenha algum de prioridade 1, vai retornar ele primeiro e depois o de prioridade 0.
+               //Mas geralmente a multiplicação fica entre os caracteres numerais. Então uma expressão grande irá ter um retorno por ex: 10+10*2/4 = 10102*4/+
                 // System.out.println("operador no topo atualmente " + Prioridade(pilha.peek()));
             }
         }
