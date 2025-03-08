@@ -46,7 +46,7 @@ public class Logica {
                 // while(!pilha.isEmpty() && Prioridade(pilha.peek()) == 0) {
                 //     resposta+=pilha.poll();
                 // }
-                pilha.add(valor); //O operador atual é empilhado, enquanto os operadores de maior prioridade já foram desempilhados.
+                pilha.add(valor); //sobe o valor na pilha, mas agora somente com os operadores de prioridade menor que 1. Lembrando que se for uma expressão de +/-, a lógica acima será ignorada.
                 // System.out.println("operador no topo atualmente " + Prioridade(pilha.peek()));
             }
         }
