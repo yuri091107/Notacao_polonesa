@@ -43,18 +43,23 @@ public class Logica {
                     resposta+=pilha.pop(); //alego que a pilha contém elementos (mesmo eu não tendo adicionando algum, devido fato de ela poder acessar elementos presentes em armazenamentos, ela consegue fazer o mesmo papel dentro do método de Prioridade, ele vai verificar os valores de X, aquele que estiver = 1, ele vai descer e atribuir ao resultado)
                 
                 }
-                // while(!pilha.isEmpty() && Prioridade(pilha.peek()) == 0) {
-                //     resposta+=pilha.poll();
-                // }
-                pilha.add(valor); //sobe o valor na pilha, mas agora somente com os operadores de prioridade menor que 1. Lembrando que se for uma expressão de +/-, a lógica acima será ignorada e vai retornar somente os operadores de prioridade 0. Caso tenha algum de prioridade 1, vai retornar ele primeiro e depois o de prioridade 0.
-               //Mas geralmente a multiplicação fica entre os caracteres numerais. Então uma expressão grande irá ter um retorno por ex: 10+10*2/4 = 10102*4/+
+                
+                while(pilha.isEmpty()) {
+                    pilha.add(valor); //O operador atual é empilhado, enquanto os operadores de maior prioridade já foram desempilhados.
+                }
                 // System.out.println("operador no topo atualmente " + Prioridade(pilha.peek()));
             }
         }
-        while(!pilha.isEmpty()) {
-            resposta+=pilha.pop(); //os removendo e atribuindo na respostas
+        
+        while(!pilha.isEmpty() && Prioridade(pilha.peek()) == 0) {
+            resposta+=pilha.pop();  //os removendo e atribuindo na respostas
         }
         
+        
+        // while(!pilha.isEmpty()) {
+        //     resposta+=pilha.pop(); //os removendo e atribuindo na respostas
+        // }
+
         return resposta;   
     } 
 }
