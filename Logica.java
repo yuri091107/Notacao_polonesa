@@ -44,21 +44,15 @@ public class Logica {
                 
                 }
                 
-                if(pilha.isEmpty()) {
-                    pilha.add(valor); //O operador atual é empilhado, enquanto os operadores de maior prioridade já foram desempilhados.
-                }
+                pilha.add(valor); //O operador atual é empilhado, enquanto os operadores de maior prioridade já foram desempilhados.
+                
                 // System.out.println("operador no topo atualmente " + Prioridade(pilha.peek()));
             }
         }
         
-        while(!pilha.isEmpty() && Prioridade(pilha.peek()) == 0) {
-            resposta+=pilha.pop();  //os removendo e atribuindo na respostas
+        while(!pilha.isEmpty()) {
+            resposta+=pilha.pop(); //os removendo e atribuindo na respostas
         }
-        
-        
-        // while(!pilha.isEmpty()) {
-        //     resposta+=pilha.pop(); //os removendo e atribuindo na respostas
-        // }
 
         return resposta;   
     } 
